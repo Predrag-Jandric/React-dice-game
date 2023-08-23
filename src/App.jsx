@@ -1,7 +1,7 @@
 import React from "react"
 import {nanoid} from "nanoid"
-import Confetti from "react-confetti"
 import SingleDice from "./components/SingleDice"
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function App() {
 
@@ -65,7 +65,7 @@ export default function App() {
     
     return (
         <main>
-            {game && <Confetti />}
+            {game && <ConfettiExplosion/>}
             <h1>Simple React game</h1>
             <p>Roll until all dice are the same. 
             Click each die to freeze it at its current value between rolls.</p>

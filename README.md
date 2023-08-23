@@ -1,6 +1,6 @@
 # 🛠 React - simple game
 
-# 🔗 [Live Preview](https://rococo-sprite-17c4f3.netlify.app/)
+# 🔗 [Live Preview]()
 ![Design preview](./preview.gif)
 
 ## Welcome! 👋
