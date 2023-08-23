@@ -6,14 +6,14 @@ import SingleDice from "./components/SingleDice"
 export default function App() {
 
     const [dice, setDice] = React.useState(allNewDice())
-    const [tenzies, setTenzies] = React.useState(false)
+    const [game, setGame] = React.useState(false)
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
         const firstValue = dice[0].value
         const allSameValue = dice.every(die => die.value === firstValue)
         if (allHeld && allSameValue) {
-            setTenzies(true)
+            setGame(true)
         }
     }, [dice])
 
@@ -34,14 +34,14 @@ export default function App() {
     }
     
     function rollDice() {
-        if(!tenzies) {
+        if(!game) {
             setDice(oldDice => oldDice.map(die => {
                 return die.isHeld ? 
                     die :
                     generateNewDie()
             }))
         } else {
-            setTenzies(false)
+            setGame(false)
             setDice(allNewDice())
         }
     }
@@ -65,18 +65,19 @@ export default function App() {
     
     return (
         <main>
-            {tenzies && <Confetti />}
-            <h1 className="title">Tenzies</h1>
-            <p className="instructions">Roll until all dice are the same. 
+            {game && <Confetti />}
+            <h1>Simple React game</h1>
+            <p>Roll until all dice are the same. 
             Click each die to freeze it at its current value between rolls.</p>
+
             <div className="dice-container">
                 {diceElements}
             </div>
+
             <button 
                 className="roll-dice" 
-                onClick={rollDice}
-            >
-                {tenzies ? "New Game" : "Roll"}
+                onClick={rollDice}>
+                {game ? "New Game" : "Roll"}
             </button>
         </main>
     )
