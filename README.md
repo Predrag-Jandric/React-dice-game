@@ -1,6 +1,6 @@
 # 🛠 React - simple game
 
-# 🔗 [Live Preview]()
+# 🔗 [Live Preview](https://main--sparkling-babka-a8beca.netlify.app/)
 ![Design preview](./preview.gif)
 
 ## Welcome! 👋
